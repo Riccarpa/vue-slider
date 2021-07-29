@@ -18,9 +18,36 @@ Vue.config.devtools = true;
 const root = new Vue({
     el: '#root',
     data: {
+        images: [
+            "./images/image1.jpg",
+            "./images/image2.jpg",
+            "./images/image3.jpg",
+            "./images/image4.jpg"
+        ],
+        currentIndex: 0,
 
     },
-    methods: {},
+    methods: {
+        isActive(index) {
+            return this.currentIndex === index ? 'active' : '';
+        },
+        increaseIndex() {
+            this.currentIndex++;
+            if (this.currentIndex === this.images.length) {
+                this.currentIndex = 0;
+            }
+
+
+        },
+        decreaseIndex() {
+            this.currentIndex--;
+            if (this.currentIndex < 0) {
+                this.currentIndex = this.images.length - 1;
+            }
+
+        }
+    },
+
 
 
 })
