@@ -28,3 +28,7 @@ img {
 .blu-dot {
     background-color: blue;
 }
+
+.click {
+    cursor: pointer;
+}

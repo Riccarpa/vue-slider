@@ -18,18 +18,18 @@
         <div class="container vh-100 ">
             <div class="row pt-5 justify-content-center align-items-center">
                 <div class="col-1 text-center">
-                    <i @click="decreaseIndex" class="fas fa-chevron-left fa-2x"></i>
+                    <i @click="decreaseIndex" class="fas fa-chevron-left fa-2x click"></i>
                 </div>
                 <div class="col-10 img-container">
                     <img v-for="(image, index) in images" :src="image" :class="isActive(index)" alt=" ">
                 </div>
                 <div class="col-1 text-center ">
-                    <i @click="increaseIndex " class="fas fa-chevron-right fa-2x "></i>
+                    <i @click="increaseIndex " class="fas fa-chevron-right fa-2x click"></i>
                 </div>
             </div>
             <div class="row justify-content-center pt-5 ">
                 <div class="dots col-12 d-flex justify-content-evenly align-items-center ">
-                    <div v-for="(item, dotIndex) in images" :class="dotColour(dotIndex)" class="dot"></div>
+                    <div v-for="(item, dotIndex) in images" :class="dotColour(dotIndex)" @click="setNewIndex(dotIndex)" class="dot click"></div>
 
                 </div>
             </div>

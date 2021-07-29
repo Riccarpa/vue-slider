@@ -35,20 +35,36 @@ const root = new Vue({
             this.currentIndex++;
             if (this.currentIndex === this.images.length) {
                 this.currentIndex = 0;
-            }
+            };
+            this.autoPlay();
 
         },
         decreaseIndex() {
             this.currentIndex--;
             if (this.currentIndex < 0) {
                 this.currentIndex = this.images.length - 1;
-            }
-
+            };
+            this.autoPlay();
         },
         dotColour(index) {
             return this.currentIndex === index ? 'blu-dot' : ''
+        },
+        setNewIndex(newIndex) {
+            this.currentIndex = newIndex;
+            this.autoPlay();
+
+        },
+        autoPlay() {
+            clearInterval(this.intervalId);
+            this.intervalId = setInterval(() => { this.increaseIndex() }, 2000);
         }
+
+
+
     },
+    created() {
+        this.intervalId = setInterval(() => { this.increaseIndex() }, 2000);
+    }
 
 
 
