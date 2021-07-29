@@ -37,7 +37,6 @@ const root = new Vue({
                 this.currentIndex = 0;
             }
 
-
         },
         decreaseIndex() {
             this.currentIndex--;
@@ -45,6 +44,9 @@ const root = new Vue({
                 this.currentIndex = this.images.length - 1;
             }
 
+        },
+        dotColour(index) {
+            return this.currentIndex === index ? 'blu-dot' : ''
         }
     },
 

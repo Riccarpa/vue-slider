@@ -1,7 +1,30 @@
 img {
     display: none;
+    height: 100%;
+    width: 100%;
+}
+
+.img-container {
+    height: 400px;
 }
 
 .active {
     display: inline-block;
+}
+
+.dots {
+    height: 50px;
+    width: 100px;
+    background-color: rgb(99, 99, 99);
+    border-radius: 10px;
+}
+
+.dot {
+    border-radius: 50%;
+    background-color: white;
+    padding: 5px;
+}
+
+.blu-dot {
+    background-color: blue;
 }

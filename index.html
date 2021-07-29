@@ -29,10 +29,8 @@
             </div>
             <div class="row justify-content-center pt-5 ">
                 <div class="dots col-12 d-flex justify-content-evenly align-items-center ">
-                    <div class="dot "></div>
-                    <div class="dot "></div>
-                    <div class="dot "></div>
-                    <div class="dot "></div>
+                    <div v-for="(item, dotIndex) in images" :class="dotColour(dotIndex)" class="dot"></div>
+
                 </div>
             </div>
         </div>
